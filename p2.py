@@ -4,7 +4,7 @@ def p2(limit):
 	a, b = 0, 1
 	while a < limit:
 		rv += a
-		a, b = a + 2 * b, 2 * a + 3 * b
+		a, b = a + 2 * b, 2 * a + 3 * b # step by three
 	return rv
 
 print p2(4000000)
