@@ -1,6 +1,5 @@
 def pandigital(n):
-    digits = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
-	return len(n) == 9 and len(set(map(int, n)) ^ digits) == 0
+	return len(n) == 9 and len(set(map(int, n)) ^ set(range(1, 9))) == 0
 
 def cp(i):
 	# concatenate products and check if pandigital
