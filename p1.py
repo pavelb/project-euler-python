@@ -5,4 +5,4 @@ def smk(k, n): # sum multiples of k that are in [2, n)
 def p1(n):
 	return smk(3, n) + smk(5, n) - smk(3 * 5, n)
 
-print(p1(1000))
+print p1(1000)
