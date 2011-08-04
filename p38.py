@@ -17,4 +17,4 @@ def p38():
 	# since |[i]| <= |[2i]| have [i][2i] = [9999][99999] giving i = 9999
 	return max(cp(i) for i in range(1, 9999))
 
-print(p38())
+print p38()
