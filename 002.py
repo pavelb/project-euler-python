@@ -1,4 +1,4 @@
-def fib3(limit): # generate every third fib < limit
+def fib3(limit):
 	a, b = 0, 1
 	while a < limit:
 		yield a

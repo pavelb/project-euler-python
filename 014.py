@@ -1,7 +1,8 @@
 def collatz(n):
 	while True:
 		yield n
-		if n <= 1: break
+		if n <= 1:
+			break
 		n = n // 2 if n % 2 == 0 else 3 * n + 1
 
 def main(lim):

@@ -2,9 +2,11 @@ def cached(fn):
 	cache = dict()
 	def new(w, h):
 		key = str(h) + '.' + str(w)
-		if key in cache: return cache[key]
+		if key in cache:
+			return cache[key]
 		key = str(w) + '.' + str(h)
-		if not key in cache: cache[key] = fn(w, h)
+		if not key in cache:
+			cache[key] = fn(w, h)
 		return cache[key]
 	return new
 

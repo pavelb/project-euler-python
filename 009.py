@@ -1,20 +1,23 @@
-def triples(limit, a = 3, b = 4, c = 5):
-	# generate all pythagorean triplets with perimiter <= limit
+from itertools import count
+
+def pythagoreanTriples(a = 3, b = 4, c = 5):
+	# return a generator for the triplets in order of increasing perimiter
 	# en.wikipedia.org/wiki/Pythagorean_triple#Parent.2Fchild_relationships
-	kmax = limit // (a + b + c)
-	if kmax == 0: return
-	for k in range(1, kmax + 1):
-		yield k*a, k*b, k*c
-	for t in triples(limit, a - 2*b + 2*c, 2*a - b + 2*c, 2*a - 2*b + 3*c):
-		yield t
-	for t in triples(limit, a + 2*b + 2*c, 2*a + b + 2*c, 2*a + 2*b + 3*c):
-		yield t
-	for t in triples(limit, -a + 2*b + 2*c, -2*a + b + 2*c, -2*a + 2*b + 3*c):
-		yield t
+	yield a, b, c
+	gens = [
+		((k * a, k * b, k * c) for k in count(2)),
+		pythagoreanTriples(a - 2 * b + 2 * c, 2 * a - b + 2 * c, 2 * a - 2 * b + 3 * c),
+		pythagoreanTriples(a + 2 * b + 2 * c, 2 * a + b + 2 * c, 2 * a + 2 * b + 3 * c),
+		pythagoreanTriples(-a + 2 * b + 2 * c, -2 * a + b + 2 * c, -2 * a + 2 * b + 3 * c)
+	]
+	opts = [(sum(v), v, i) for i, v in enumerate(map(next, gens))]
+	while True:
+		_, tuple, i = min(opts)
+		yield tuple
+		tuple = next(gens[i])
+		opts[i] = (sum(tuple), tuple, i)
 
 def main(n):
-	for a, b, c in triples(n):
-		if a + b + c == n:
-			return a*b*c
+	return next(a * b * c for a, b, c in pythagoreanTriples() if a + b + c == n)
 
 print(main(1000))

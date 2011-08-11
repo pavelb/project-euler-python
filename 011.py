@@ -1,4 +1,4 @@
-from itertools import product as cross
+from itertools import product
 
 def d2dir(d): # map direction index to direction
 	d += 5
@@ -6,7 +6,7 @@ def d2dir(d): # map direction index to direction
 	y = ((d // 3) % 3) - 1
 	return x, y
 
-def product(nums, k, ray): # get product of len k along ray
+def multiply(nums, k, ray): # get product of len k along ray
 	x, y, d = ray
 	rows = len(nums)
 	cols = len(nums[0])
@@ -24,7 +24,7 @@ def main(nums, k):
 	rows = range(len(nums))
 	cols = range(len(nums[0]))
 	dirs = range(8)
-	return max(product(nums, k, ray) for ray in cross(rows, cols, dirs))
+	return max(multiply(nums, k, ray) for ray in product(rows, cols, dirs))
 
 print(main([
 	[8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
