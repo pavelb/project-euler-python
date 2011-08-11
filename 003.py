@@ -3,7 +3,7 @@ def main(n):
 	k = 2
 	rv = None
 	while k <= n:
-		if n % k == 0:
+		while n % k == 0:
 			n //= k
 			rv = k
 		k += 1

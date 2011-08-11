@@ -1,4 +1,4 @@
-def smk(k, n): # sum multiples of k that are in [2, n)
+def smk(k, n): # sum multiples of k in [2, n)
 	nd = (n - 1) // k
 	return k * nd * (nd + 1) // 2
 

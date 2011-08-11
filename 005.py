@@ -1,11 +1,21 @@
 from functools import reduce
 from itertools import count
+from math import sqrt
 
 def primes(limit = float('inf')):
 	prim = list()
 	for n in count(2):
-		if n > limit: return
-		if all(n % k != 0 for k in prim):
+		rootn = sqrt(n)
+		if n > limit:
+			return
+		good = True
+		for p in prim:
+			if p > rootn:
+				break
+			if n % p == 0:
+				good = False
+				break
+		if good:
 			prim.append(n)
 			yield n
 
@@ -13,10 +23,11 @@ def product(it):
 	return reduce(lambda a, b: a * b, it)
 
 def contribution(k, n): # return k^e for max e given k^e | n
-	a, b = 1, k
-	while n % b == 0:
-		a, b = b, b * k
-	return a
+	rv = 1
+	while n % k == 0:
+		n //= k
+		rv *= k
+	return rv
 
 def main(n):
 	# trick: consider the maximum individual contribution of each prime factor
