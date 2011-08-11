@@ -3,7 +3,8 @@ from math import factorial
 def main(n, items):
 	n -= 1 # zero indexed
 	rv = ''
-	for f in reversed([factorial(k) for k in range(len(items))]):
+	for i in reversed(range(len(items))):
+		f = factorial(i)
 		rv += str(items.pop(n // f))
 		n %= f
 	return rv
