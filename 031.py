@@ -1,7 +1,7 @@
 def main(nums, target, i=0):
 	if target == 0:
 		return 1
-	if target < 0 or i >= len(nums):
+	if i >= len(nums):
 		return 0
 	return sum(main(nums, target - n, i + 1) for n in range(0, target + 1, nums[i]))
 
