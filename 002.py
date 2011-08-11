@@ -1,4 +1,4 @@
-def fib3(limit):
+def fibonacci3(limit):
 	a, b = 0, 1
 	while a < limit:
 		yield a
@@ -6,6 +6,6 @@ def fib3(limit):
 
 def main(limit):
 	# trick: n % 3 == 0 <=> fib(n) is even
-	return sum(fib3(limit))
+	return sum(fibonacci3(limit))
 
 print(main(4000000))

@@ -1,9 +1,10 @@
-def main(limit):
-	n = 0
+def fibonacci():
 	a, b = 0, 1
-	while len(str(a)) < limit:
-		n += 1
+	while True:
+		yield a
 		a, b = b, a + b
-	return n
+
+def main(limit):
+	return next(n for n, f in enumerate(fibonacci()) if len(str(f)) >= limit)
 
 print(main(1000))
