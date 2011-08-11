@@ -194,7 +194,7 @@ def printBoard(board):
 
 def main():
 	rv = 0
-	with open('96.txt', 'r') as f:
+	with open('096.txt', 'r') as f:
 		while f.readline():
 			board = []
 			for _ in range(9):
