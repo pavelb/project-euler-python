@@ -1,4 +1,4 @@
-from itertools import count
+from itertools import count, combinations, product
 from math import sqrt
 
 class Primes:
@@ -33,7 +33,7 @@ class Primes:
 			if p > limit:
 				break
 			yield p
-	
+
 	def factors(self, n):
 		rootn = sqrt(n)
 		for p in self.gen():
@@ -48,6 +48,17 @@ class Primes:
 				yield p, exp
 		if n > 1:
 			yield n, 1
+
+	def divisors(self, n, proper = False):
+		if n > 0:
+			parts = list([pow(b, i) for i in range(1, e + 1)] for b, e in self.factors(n))
+			for k in range(len(parts) + 1):
+				for tuples in combinations(parts, k):
+					for tuple in product(*tuples):
+						d = multiply(tuple)
+						if proper and d == n:
+							return
+						yield d
 
 def multiply(iterator):
 	rv = 1
