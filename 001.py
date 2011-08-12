@@ -5,4 +5,4 @@ def smk(k, n): # sum multiples of k in [2, n)
 def main(n):
 	return smk(3, n) + smk(5, n) - smk(3 * 5, n)
 
-print(main(1000))
+print(main(1000)) # 233168

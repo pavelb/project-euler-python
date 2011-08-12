@@ -13,4 +13,4 @@ def triangleNums():
 def main(n):
 	return next(t for t in triangleNums() if divisorCount(t) > n)
 
-print(main(500))
+print(main(500)) # 76576500

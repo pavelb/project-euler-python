@@ -1,6 +1,7 @@
 from math import factorial
 
-def main(n, items):
+def main(iterator, n):
+	items = list(iterator)
 	n -= 1 # zero indexed
 	rv = ''
 	for i in reversed(range(len(items))):
@@ -9,4 +10,4 @@ def main(n, items):
 		n %= f
 	return rv
 
-print(main(10 ** 6, list(range(10))))
+print(main(range(10), 10 ** 6)) # 2783915460

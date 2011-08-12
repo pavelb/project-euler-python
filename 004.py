@@ -1,12 +1,11 @@
-from lib import multiply
+from lib import multiply, digits
 from itertools import combinations
 
 def palindrome(n):
-	s = str(n)
-	return s == s[::-1]
+	d = list(digits(n))
+	return all(d[i] == d[-1 - i] for i in range(len(d) // 2 + 1))
 
 def main(n, k):
-	prods = (multiply(c) for c in combinations(range(pow(10, k)), n))
-	return max(p for p in prods if palindrome(p))
+	return max(filter(palindrome, map(multiply, combinations(range(pow(10, k - 1), pow(10, k)), n))))
 
-print(main(2, 3))
+print(main(2, 3)) # 906609

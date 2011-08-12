@@ -7,4 +7,4 @@ def sumOfSquare(n):
 def main(n):
 	return squareOfSum(n) - sumOfSquare(n)
 
-print(main(100))
+print(main(100)) # 25164150

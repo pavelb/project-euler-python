@@ -5,7 +5,7 @@ def namer(n, over100 = False):
 		(1000, 'thousand'),
 		(100, 'hundred')
 	]
-	
+
 	names2 = [
 		(90, 'ninety'),
 		(80, 'eighty'),
@@ -35,17 +35,17 @@ def namer(n, over100 = False):
 		(2, 'two'),
 		(1, 'one')
 	]
-	
+
 	for k, label in names:
 		if n >= k:
 			return namer(n // k) + [label] + namer(n % k, True)
-	
+
 	prefix = ['and'] if over100 else []
-	
+
 	for k, label in names2:
 		if n >= k:
 			return prefix + [label] + namer(n % k, False)
-	
+
 	return []
 
 def name(n):
@@ -55,4 +55,4 @@ def name(n):
 def main(lim):
 	return sum(len(name(n)) for n in range(1, lim + 1))
 
-print(main(1000))
+print(main(1000)) # 21124

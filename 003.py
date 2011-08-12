@@ -1,12 +1,8 @@
-def main(n):
-	# trick: dividing out factors in increasing order guarantees their primeness
-	k = 2
-	rv = None
-	while k <= n:
-		while n % k == 0:
-			n //= k
-			rv = k
-		k += 1
-	return rv
+from lib import Primes
 
-print(main(600851475143))
+primes = Primes()
+
+def main(n):
+	return max(b for b, _ in primes.factors(n))
+
+print(main(600851475143)) # 6857

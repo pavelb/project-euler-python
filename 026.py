@@ -14,7 +14,6 @@ def cycle(d):
 	return rv[mem.index(n):]
 
 def main(limit):
-	_, d = max((len(cycle(d)), d) for d in range(2, limit))
-	return d
+	return max(range(2, limit), key = lambda d: len(cycle(d)))
 
-print(main(1000))
+print(main(1000)) # 983
