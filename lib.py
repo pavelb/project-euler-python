@@ -60,6 +60,9 @@ class Primes:
 							return
 						yield d
 
+	def isPrime(self, n):
+		return n > 1 and all(b == 1 or b == n for b, _ in self.factors(n))
+
 def multiply(iterator):
 	rv = 1
 	for n in iterator:
@@ -67,3 +70,17 @@ def multiply(iterator):
 			return 0
 		rv *= n
 	return rv
+
+def digits(n):
+	rv = []
+	while True:
+		rv.append(n % 10)
+		n //= 10
+		if n == 0:
+			return reversed(rv)
+
+def num(digits):
+	n = 0
+	for d in digits:
+		n = 10 * n + d
+	return n

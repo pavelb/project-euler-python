@@ -52,7 +52,7 @@ def name(n):
 	names = namer(n)
 	return 'zero' if len(names) == 0 else ''.join(names)
 
-def p17(lim):
+def main(lim):
 	return sum(len(name(n)) for n in range(1, lim + 1))
 
-print(p17(1000))
+print(main(1000))
