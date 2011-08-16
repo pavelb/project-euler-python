@@ -1,4 +1,4 @@
-from lib import digits, pandigital
+from lib import pandigital
 
 def cp(n):
 	# concatenate products and check if pandigital

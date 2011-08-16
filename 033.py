@@ -25,4 +25,4 @@ def main():
 				break
 	return d
 
-print(main())
+print(main()) # 100

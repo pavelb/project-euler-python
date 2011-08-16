@@ -1,21 +1,12 @@
-from itertools import count
-from math import sqrt
+from itertools import takewhile, count
+from lib import Primes, square
 
-def prime(n):
-	return all(n % i != 0 for i in range(2, int(sqrt(n)) + 1))
+primes = Primes()
 
 def goldbach(n):
-	for s in count(1):
-		n2 = n - 2 * s * s
-		if n2 < 2:
-			return False
-		if prime(n2):
-			return True
+	return any(square((n - p) / 2) for p in takewhile(lambda p: p < n, primes.gen()))
 
 def main():
-	n = 1
-	while prime(n) or goldbach(n):
-		n += 2
-	return n
+	return next(n for n in count(3, 2) if not primes.isPrime(n) and not goldbach(n))
 
-print(main())
+print(main()) # 5777

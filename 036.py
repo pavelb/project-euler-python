@@ -1,13 +1,13 @@
 from lib import num
 from itertools import product, count, takewhile, chain
 
-def palindromes(base=10):
+def palindromes(base = 10):
 	def fronts(r, base):
 		if r == 0:
 			yield tuple()
 		else:
 			for first in range(1, base):
-				for rest in product(range(base), repeat=r - 1):
+				for rest in product(range(base), repeat = r - 1):
 					yield tuple([first]) + rest
 	for r in count():
 		for half in fronts(r, base):
@@ -31,4 +31,4 @@ def main(limit):
 	base10pal = takewhile(good, palindromes(10))
 	return sum(set(base2pal) & set(base10pal))
 
-print(main(1000000))
+print(main(1000000)) # 872187

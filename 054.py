@@ -1,12 +1,11 @@
 # worked for euler but is not correct.
-# if tuple only considers cards in tuple.
 # must consider remaining cards as tie breaker if tuples match
 
 number_map = dict(zip(list("23456789TJQKA"), range(1, 14)))
 suit_map = dict(zip(list("CHSD"), range(4)))
 
 def flush(hand):
-	return len(set(suit for number, suit in hand)) == 1
+	return len(set(suit for _, suit in hand)) == 1
 
 def royal_flush(hand):
 	return flush(hand) and has_number(hand, number_map["T"]) and has_number(hand, number_map["A"])
@@ -15,7 +14,7 @@ def straight(hand):
 	def check(number):
 		a, b, c, d, e = number
 		return a + 1 == b and b + 1 == c and c + 1 == d and d + 1 == e
-	number = [number for number, suit in hand]
+	number = [number for number, _ in hand]
 	rv = check(number)
 	if number_map["A"] in number:
 		number.remove(number_map["A"])
@@ -28,16 +27,16 @@ def fix(hand):
 	return sorted([(number_map[h[0]], suit_map[h[1]]) for h in hand])
 
 def has_number(hand, number):
-	return number in [number for number, suit in hand]
+	return number in (number for number, _ in hand)
 
 def count_numbers(hand):
 	count = dict()
-	for number, suit in hand:
+	for number, _ in hand:
 		if number in count:
 			count[number] += 1
 		else:
 			count[number] = 1
-	return count.values()
+	return list(count.values())
 
 def four(hand):
 	return 4 in count_numbers(hand)
@@ -61,11 +60,11 @@ def pair(hand):
 	return 2 in count_numbers(hand)
 
 def highest(hand):
-	return max(number for number, suit in hand)
+	return max(number for number, _ in hand)
 
 def get(hand, n):
 	count = dict()
-	for number, suit in hand:
+	for number, _ in hand:
 		if number in count:
 			count[number] += 1
 		else:
@@ -74,7 +73,6 @@ def get(hand, n):
 
 def rank(hand):
 	hand = fix(hand)
-
 	if straight(hand) and flush(hand):
 		return highest(hand) + 14 * 8
 	if four(hand):
@@ -91,7 +89,6 @@ def rank(hand):
 		return highest(get(hand, 2)) + 14 * 2
 	if pair(hand):
 		return highest(get(hand, 2)) + 14 * 1
-
 	return highest(hand)
 
 def p54():
@@ -100,7 +97,7 @@ def p54():
 		for line in f:
 			a, b, c, d, e, f, g, h, i, j = line.strip().split(' ');
 			if rank([a, b, c, d, e]) > rank([f, g, h, i, j]):
-				count +=1
+				count += 1
 	return count
 
-print(p54())
+print(p54()) # 376

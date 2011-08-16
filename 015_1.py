@@ -1,7 +1,4 @@
-from math import factorial
-
-def choose(n, k):
-	return factorial(n) // (factorial(n - k) * factorial(k))
+from lib import choose
 
 def main(w, h):
 	# trick: we are computing the pascal triangle

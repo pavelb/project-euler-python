@@ -1,7 +1,4 @@
-from lib import charInd, square
-
-def triangular(n):
-	return square(8 * n + 1)
+from lib import charInd, triangular
 
 def main(file):
 	with open(file, 'r') as f:

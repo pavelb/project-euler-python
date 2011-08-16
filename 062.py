@@ -3,7 +3,8 @@ from itertools import count
 def main(lim):
 	record = dict()
 	d = 1
-	for n in (n * n * n for n in count(1)):
+	for i in count(1):
+		n = i * i * i
 		key = ''.join(sorted(str(n)))
 		if len(key) > d:
 			d = len(key)
@@ -19,4 +20,4 @@ def main(lim):
 		else:
 			record[key] = [n]
 
-print(main(5))
+print(main(5)) # 127035954683
