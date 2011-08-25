@@ -6,8 +6,7 @@ def inside(ax, ay, bx, by, cx, cy): # is (0, 0) inside triangle ABC
 
 def main(file):
 	# trick: consider an arbitrary ray. If the ray starts inside a triangle it
-	# will intersect exactly 1 side. If the ray starts outside the triangle it
-	# will intersect 0 or 2 sides.
+	# will intersect exactly 1 side, otherwise it will intersect 0 or 2 sides.
 	with open(file, 'r') as f:
 		triangles = [tuple(map(int, line.rstrip().split(','))) for line in f]
 	return sum(inside(*t) for t in triangles)
