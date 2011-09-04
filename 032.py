@@ -1,10 +1,5 @@
+from lib import num
 from itertools import permutations
-
-def num(digits):
-	rv = 0
-	for d in digits:
-		rv = 10 * rv + d
-	return rv
 
 def main(length):
 	# generate all pandigital numbers and try inserting * and = everywhere
@@ -19,4 +14,4 @@ def main(length):
 					yield ans
 	return sum(seq(length))
 
-print(main(9))
+print(main(9)) # 45228

@@ -1,8 +1,14 @@
 from math import log10
 
-def main():
-	nums = (map(int, i.split(',')) for i in open('099.txt').read().split('\n'))
-	_, line = max((e * log10(b), i + 1) for i, (b, e) in enumerate(nums))
-	return line
+def main(file):
+	# trick: compare logs
+	with open(file, 'r') as f:
+		nums = [tuple(map(int, line.rstrip().split(','))) for line in f]
 
-print(main())
+	def log(i):
+		b, e = nums[i]
+		return e * log10(b)
+
+	return 1 + max(range(len(nums)), key=log)
+
+print(main('099.txt')) # 709

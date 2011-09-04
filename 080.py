@@ -1,22 +1,15 @@
+from lib import square, digits, numLen
 from decimal import Decimal, getcontext
-from math import sqrt
 
 getcontext().prec = 102
 
-def square(n):
-	rootn = sqrt(n)
-	return rootn == int(rootn)
-
-def sumDigits(n):
-	return sum(map(int, str(n)))
-
 def dsum(n):
 	n = pow(Decimal(n), Decimal('0.5'))
-	n *= pow(10, 100 - len(str(int(n))))
+	n *= pow(10, 100 - numLen(int(n)))
 	n = int(n)
-	return sumDigits(n)
+	return sum(digits(n))
 
-def p80():
+def main():
 	return sum(dsum(n) for n in range(1, 101) if not square(n))
 
-print(p80())
+print(main()) # 40886

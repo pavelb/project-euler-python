@@ -1,13 +1,10 @@
-def triples(a, b, c, Ls, lim):
-	L = a + b + c
-	if L > lim: return
-	for i in range(L, lim, L): Ls[i] += 1 #account for multiples
-	triples(a - 2 * b + 2 * c, 2 * a - b + 2 * c, 2 * a - 2 * b + 3 * c, Ls, lim)
-	triples(a + 2 * b + 2 * c, 2 * a + b + 2 * c, 2 * a + 2 * b + 3 * c, Ls, lim)
-	triples(-a + 2 * b + 2 * c, -2 * a + b + 2 * c, -2 * a + 2 * b + 3 * c, Ls, lim)
-	return Ls
+from itertools import takewhile, groupby
+from lib import pythagoreanTriples
 
 def main(lim):
-	return sum(L == 1 for L in triples(3, 4, 5, [0] * lim, lim))
+	# trick: generate the triples in order of increasing perimeter, check adjacent perimeters for differences
+	perimeters = map(sum, pythagoreanTriples())
+	perimeters = takewhile(lambda L: L <= lim, perimeters)
+	return sum(sum(1 for _ in g) == 1 for _, g in groupby(perimeters))
 
-print(main(1500000))
+print(main(1500000)) # 161667

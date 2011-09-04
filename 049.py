@@ -1,30 +1,20 @@
-from math import sqrt
+from lib import Primes, takeLen, digitCountMap
+from itertools import combinations
 
-def prime(n):
-	return all(n % i != 0 for i in range(2, int(sqrt(n)) + 1))
-
-def choose(items, n):
-	if n == 0:
-		yield []
-	else:
-		for i in range(len(items) - (n - 1)):
-			for item in choose(items[i + 1:], n - 1):
-				yield [items[i]] + item
+primes = Primes()
 
 def group(nums):
 	record = dict()
 	for n in nums:
-		key = ''.join(sorted(list(str(n))))
-		if key not in record:
-			record[key] = []
-		record[key].append(n)
+		record.setdefault(digitCountMap(n), []).append(n)
 	return record.values()
 
-def sequence(triple):
-	return triple[2] - triple[1] == triple[1] - triple[0]
+def sequence(a, b, c):
+	return c - b == b - a
 
-def main(digits):
-	primes = filter(prime, range(pow(10, digits - 1), pow(10, digits)))
-	return [trip for g in group(primes) for trip in choose(g, 3) if sequence(trip)]
+def main(k):
+	groups = group(takeLen(k, primes.gen()))
+	trips = (trip for g in groups for trip in combinations(g, 3))
+	return [''.join(map(str, t)) for t in trips if sequence(*t)]
 
-print(main(4))
+print(main(4)) # 296962999629

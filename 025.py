@@ -1,10 +1,6 @@
-def fibonacci():
-	a, b = 0, 1
-	while True:
-		yield a
-		a, b = b, a + b
+from lib import fibonaccis, numLen
 
 def main(limit):
-	return next(n for n, f in enumerate(fibonacci()) if len(str(f)) >= limit)
+	return next(n for n, f in enumerate(fibonaccis()) if numLen(f) >= limit)
 
-print(main(1000))
+print(main(1000)) # 4782

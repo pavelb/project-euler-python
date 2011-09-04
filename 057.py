@@ -1,10 +1,13 @@
-def cf2(lim):
+from lib import numLen
+from itertools import islice
+
+def convergents2():
 	a, b = 1, 1
-	for _ in range(lim):
-		a, b = a + 2 * b, a + b
+	while True:
 		yield a, b
+		a, b = a + 2 * b, a + b
 
 def main(lim):
-	return sum(len(str(n)) > len(str(d)) for n, d in cf2(lim))
+	return sum(numLen(n) > numLen(d) for n, d in islice(convergents2(), lim))
 
-print(main(1000))
+print(main(1000)) # 153

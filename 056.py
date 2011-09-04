@@ -1,7 +1,6 @@
-def sumDigits(n):
-	return sum(map(int, str(n)))
+from lib import digits
 
 def main(lim):
-	return max(sumDigits(pow(a, b)) for a in range(lim) for b in range(lim))
+	return max(sum(digits(pow(a, b))) for a in range(lim) for b in range(lim))
 
-print(main(100))
+print(main(100)) # 972

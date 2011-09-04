@@ -3,12 +3,8 @@ from lib import Primes
 primes = Primes()
 
 def main(lim):
-	divisorSum = [sum(primes.divisors(i, proper = True)) for i in range(lim)]
-	amicable = []
-	for i in range(lim):
-		j = divisorSum[i]
-		if j < lim and i == divisorSum[j] and i != j:
-			amicable.append(i)
-	return sum(amicable)
+	d = [primes.sumDivisors(n) for n in range(lim)]
+	amicable = lambda n: d[n] < lim and n == d[d[n]] and n != d[n]
+	return sum(filter(amicable, range(lim)))
 
-print(main(10000))
+print(main(10000)) # 31626

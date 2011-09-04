@@ -16,19 +16,10 @@ def palindromes(base=10):
 		for half in fronts(r + 1, base):
 			yield num(chain(half, reversed(half)))
 
-def toDec(n, base):
-	rv = 0
-	p = 1
-	while n > 0:
-		rv += (n % 10) * p
-		n //= 10
-		p *= base
-	return rv
-
 def main(limit):
 	good = lambda n: n < limit
-	base2pal = takewhile(good, (toDec(n, 2) for n in palindromes(2)))
+	base2pal = takewhile(good, (int(str(n), 2) for n in palindromes(2)))
 	base10pal = takewhile(good, palindromes(10))
 	return sum(set(base2pal) & set(base10pal))
 
-print(main(1000000))
+print(main(1000000)) # 872187

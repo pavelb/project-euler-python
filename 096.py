@@ -37,7 +37,7 @@ def valid(board):
 	if any(not validLineV(board, i) for i in range(9)):
 		return False
 	# ensure all regions are valid
-	if any(not validBlock(board, 3 * i0, 3 * j0) for i0 in range(0, 3) for j0 in range(0, 3)):
+	if any(not validBlock(board, 3 * i0, 3 * j0) for i0 in range(3) for j0 in range(3)):
 		return False
 	return True
 
@@ -158,7 +158,7 @@ def solve(board):
 					if type(cell) == list and cell[digit - 1]:
 						return True
 			return False
-		
+
 		for i in range(9):
 			for j in range(9):
 				cell = board[i][j]
@@ -192,9 +192,9 @@ def printBoard(board):
 		sys.stdout.write('\n')
 	sys.stdout.flush()
 
-def main():
+def main(file): # 24702
 	rv = 0
-	with open('096.txt', 'r') as f:
+	with open(file, 'r') as f:
 		while f.readline():
 			board = []
 			for _ in range(9):
@@ -202,6 +202,6 @@ def main():
 				board.append([int(r) for r in row])
 			solve(board)
 			rv += board[0][0] * 100 + board[0][1] * 10 + board[0][2]
-	print(rv)
+	return rv
 
-main()
+print(main('096.txt')) # 24702

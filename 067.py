@@ -10,4 +10,4 @@ def main(file):
 		last = row
 	return table[0][0]
 
-print(main('067.txt'))
+print(main('067.txt')) # 7273

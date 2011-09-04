@@ -1,4 +1,6 @@
-def main(n):
-	return sum(map(int, str(n)))
+from lib import digits
 
-print(main(pow(2, 1000)))
+def main(n):
+	return sum(digits(pow(2, n)))
+
+print(main(1000)) # 1366

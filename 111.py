@@ -1,35 +1,28 @@
-def primesUpTo(last):
-	sieve = [True] * (last + 1)
-	sieve[0] = False
-	sieve[1] = False
-	for i in range(2, int(last ** 0.5) + 1):
-		if sieve[i]: sieve[i * i:last + 1:i] = [False] * (last // i - i + 1)
-	return [i for i, prime in enumerate(sieve) if prime]
+from lib import Primes, num
+from itertools import combinations, product
 
-primes = primesUpTo(10 ** 5)
+primes = Primes()
 
-def is_prime(n):
-	sq = n ** 0.5
-	for p in primes:
-		if p >= sq: break
-		if n % p == 0: return False
-	return True
+def fillMask(mask, skip, vars):
+	digi = (n for n in range(10) if n != skip)
+	for k in product(digi, repeat=vars):
+		for indices in combinations(range(len(mask)), vars):
+			m = mask[:]
+			for i, d in enumerate(k):
+				m[indices[i]] = d
+			if m[0] != 0:
+				yield num(m)
 
-def dcm(n):
-	rv = [0] * 10
-	while n > 0:
-		rv[n % 10] += 1
-		n //= 10
-	return rv
+def S(size, d):
+	mask = [d] * size
+	for k in range(1, size):
+		nums = fillMask(mask, d, k)
+		nums = filter(primes.isPrime, nums)
+		rv = sum(nums)
+		if rv > 0:
+			return rv
 
-def p111(e):
-	hist = [[0, 0]] * 10
-	for n in range(10 ** (e - 1) + 1, 10 ** e + 1, 2):
-		if is_prime(n):
-			for digit, count in enumerate(dcm(n)):
-				M, S = hist[digit]
-				if count == M: hist[digit] = M, S + n
-				elif count > M: hist[digit] = count, n
-	return sum(s for _, s in hist)
+def main(k):
+	return sum(S(k, d) for d in range(10))
 
-print(p111(10))
+print(main(10)) # 612407567715

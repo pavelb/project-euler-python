@@ -18,4 +18,4 @@ def main(sides, lim):
 				maximum = max(maximum, int(n))
 	return maximum
 
-print(main(5, 16))
+print(main(5, 16)) # 6531031914842725

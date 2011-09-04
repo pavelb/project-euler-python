@@ -3,20 +3,16 @@ from itertools import count
 def main(lim):
 	record = dict()
 	d = 1
-	for n in (n * n * n for n in count(1)):
+	for i in count(1):
+		n = i * i * i
 		key = ''.join(sorted(str(n)))
-		if len(key) > d:
+		if len(key) > d: # length increased, check shorter nums
 			d = len(key)
-			rv = None
-			for tuple in record.values():
-				if len(tuple) == lim:
-					rv = min(rv, tuple[0]) if rv else tuple[0]
-			if rv:
-				return rv
+			good = lambda t: len(t) == lim
+			goodNums = list(filter(good, record.values()))
+			if goodNums:
+				return min(min(goodNums))
 			record.clear()
-		if key in record:
-			record[key].append(n)
-		else:
-			record[key] = [n]
+		record.setdefault(key, []).append(n)
 
-print(main(5))
+print(main(5)) # 127035954683

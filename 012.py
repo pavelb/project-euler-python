@@ -1,16 +1,11 @@
-from itertools import count
-from lib import Primes, multiply
+from lib import Primes, multiply, ngonalNums
 
 primes = Primes()
 
 def divisorCount(n):
 	return multiply(e + 1 for _, e in primes.factors(n))
 
-def triangleNums():
-	for i in count(1):
-		yield i * (i + 1) // 2
-
 def main(n):
-	return next(t for t in triangleNums() if divisorCount(t) > n)
+	return next(t for t in ngonalNums(3) if divisorCount(t) > n)
 
-print(main(500))
+print(main(500)) # 76576500

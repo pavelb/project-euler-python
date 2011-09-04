@@ -1,4 +1,4 @@
-from lib import Primes
+from lib import Primes, reduceFrac
 
 primes = Primes()
 
@@ -12,17 +12,10 @@ def main():
 					na, nb = n // 10, n % 10
 					if nb > 0 and na != nb and (da == na and n * db == nb * d or da == nb and n * db == na * d or db == na and n * da == nb * d or db == nb and n * da == na * d):
 						yield n, d
-	n = 1
-	d = 1
+	n, d = 1, 1
 	for a, b in seq():
-		n *= a
-		d *= b
-	for b, e in primes.factors(n):
-		for _ in range(e):
-			if d % b == 0:
-				d //= b
-			else:
-				break
+		n, d = a * n, b * d
+	n, d = reduceFrac(n, d)
 	return d
 
-print(main())
+print(main()) # 100
