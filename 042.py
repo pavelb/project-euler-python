@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from lib import charInd, triangular
 
 def main(file):
@@ -8,3 +9,13 @@ def main(file):
 	return sum(map(triangular, sums))
 
 print(main('042.txt')) # 162
+=======
+from lib import charInd, triangular
+
+def main(file):
+	with open(file, 'r') as f:
+		words = f.readline().replace('"', '').split(',')
+		return sum(triangular(sum(map(charInd, word))) for word in words)
+
+print(main('042.txt')) # 162
+>>>>>>> upstream/master

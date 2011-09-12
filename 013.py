@@ -1,7 +1,14 @@
 from lib import num, digits
+<<<<<<< HEAD
 
 def main(nums, k):
 	return num(digits(sum(nums))[:k])
+=======
+from itertools import islice
+
+def main(nums, k):
+	return num(islice(digits(sum(nums)), k))
+>>>>>>> upstream/master
 
 print(main([
 	37107287533902102798797998220837590246510135740250,

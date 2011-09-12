@@ -18,4 +18,8 @@ def main():
 	n, d = reduceFrac(n, d)
 	return d
 
+<<<<<<< HEAD
 print(main()) # 100
+=======
+print(main()) # 100
+>>>>>>> upstream/master
