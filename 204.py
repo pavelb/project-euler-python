@@ -1,14 +1,11 @@
-def primesUpTo(last):
-	sieve = [True] * (last + 1)
-	sieve[0] = False
-	sieve[1] = False
-	for i in range(2, int(last ** 0.5) + 1):
-		if sieve[i]: sieve[i * i:last + 1:i] = [False] * (last // i - i + 1)
-	return [i for i, prime in enumerate(sieve) if prime]
+from lib import Primes
+from itertools import takewhile
 
-def p204(limit, ubound):
+primes = Primes()
+
+def main(limit, ubound):
 	rv = [1]
-	for p in primesUpTo(limit):
+	for p in takewhile(lambda p: p < limit, primes.gen()):
 		rv2 = rv[:]
 		m = p
 		while m <= ubound:
@@ -20,4 +17,4 @@ def p204(limit, ubound):
 		rv = sorted(rv2)
 	return len(rv)
 
-print(p204(100, 10 ** 9))
+print(main(100, 10 ** 9)) # 2944730

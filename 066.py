@@ -8,10 +8,6 @@ def minX(D):
 
 def main(limit):
 	# trick: Pell equation, solutions are convergents of sqrt(D)
-<<<<<<< HEAD
 	return max(range(2, limit + 1), key=minX)
-=======
-	return max(range(2, limit + 1), key = lambda D: minX(D))
->>>>>>> upstream/master
 
 print(main(1000)) # 661

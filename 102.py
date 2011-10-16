@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 from itertools import starmap
 
-=======
->>>>>>> upstream/master
 def hit(ax, ay, bx, by): # does the ray (t, 0) intersect line segment AB (not counting the points (0, 0), A, and B)
 	return (ay > 0) != (by > 0) and (ay > by) == (ay * bx > by * ax)
 
@@ -13,13 +10,8 @@ def main(file):
 	# trick: consider an arbitrary ray. If the ray starts inside a triangle it
 	# will intersect exactly 1 side, otherwise it will intersect 0 or 2 sides.
 	with open(file, 'r') as f:
-<<<<<<< HEAD
 		parseline = lambda line: map(int, line.rstrip().split(','))
 		triangles = map(parseline, f)
 		return sum(starmap(inside, triangles))
-=======
-		triangles = [tuple(map(int, line.rstrip().split(','))) for line in f]
-	return sum(inside(*t) for t in triangles)
->>>>>>> upstream/master
 
 print(main('102.txt')) # 228

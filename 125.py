@@ -1,3 +1,5 @@
+# not finished
+
 def ss(m, n): return (n * (n + 1) * (2 * n + 1) - m * (m - 1) * (2 * m - 1)) / 6
 
 def isPalin(n):

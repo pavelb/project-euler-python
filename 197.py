@@ -1,8 +1,9 @@
 from math import floor
 
-def f(x): return floor(2 ** (30.403243784 - x ** 2)) / 10 ** 9
+def f(x):
+	return floor(2 ** (30.403243784 - x ** 2)) / 10 ** 9
 
-def p197():
+def main():
 	n = -1
 	last = 0
 	while True:
@@ -12,4 +13,4 @@ def p197():
 		last = a
 		n = np
 
-print(p197())
+print(main()) # 1.710637717

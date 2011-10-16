@@ -1,4 +1,4 @@
-# This code is a complete mess and needs to be redone
+# not finished
 
 def p122_1(base):
 	db = [None] * base

@@ -1,4 +1,4 @@
-import random # highlight this file yellow meaning im not done
+# not finished
 
 def A(m, n):
 	print(m, n)

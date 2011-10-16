@@ -1,4 +1,4 @@
-import random
+# not finished
 
 def grow(order):
 	if order == 0: return 0
@@ -35,7 +35,7 @@ def polyomino(order):
 
 	for sculpture in sculptures: sculpture.sort()
 	sculptures = sorted(sculptures)
-	
+
 	last = None
 	for sculpture in sculptures:
 		if sculpture != last and balanced(sculpture):

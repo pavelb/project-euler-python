@@ -1,3 +1,4 @@
+# not finished
 from heapq import heappush, heappop
 
 def snm(n):

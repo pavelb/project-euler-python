@@ -1,3 +1,5 @@
+# not finished
+
 def gen(n):
 	singleton = set([n])
 	if n == 1:

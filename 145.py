@@ -1,16 +1,17 @@
+# not finished
 # This is so terrible, it took about 5 minutes to get the answer
 
 def reverse(n):
 	rv = 0
 	while n > 0:
 		rv = rv * 10 + n % 10
-		n /= 10
+		n //= 10
 	return rv
 
 def onlyOddDigits(n):
 	while n > 0:
 		if n % 2 == 0: return False
-		n /= 10
+		n //= 10
 	return True
 
 def p145():

@@ -1,7 +1,7 @@
 from itertools import count
 from math import sqrt
 
-def p137(limit):
+def main(limit):
 	i = 0
 	for m in count(0):
 		a = pow(9 - 4 * sqrt(5), 2 * m)
@@ -21,4 +21,4 @@ def p137(limit):
 			if i == limit:
 				return int(n)
 
-print(p137(15))
+print(main(15)) # 1120149658760

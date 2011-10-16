@@ -13,7 +13,7 @@ def ltpe(dec1, dec2):
 	b = int(dec2 * places)
 	return a == b
 
-def p235():
+def main():
 	left = Decimal(str(299.0 / 300.0 + 2.0 / 10 ** 2))
 	right = Decimal(str(1 - 1.0 / 10 ** 6))
 	last = left
@@ -25,7 +25,7 @@ def p235():
 		#	s(5000, right) > target
 		center = (left + right) / 2
 		t = s(5000, (left + right) / 2)
-		print(t, center)
+		# print(t, center)
 		if ltpe(center, last): break
 		elif t > target: right = center
 		else: left = center
@@ -33,4 +33,4 @@ def p235():
 
 	return center.quantize(Decimal('.000000000001'), rounding = ROUND_UP)
 
-print(p235())
+print(main()) # 1.002322108633

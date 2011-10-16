@@ -12,7 +12,6 @@ def reduce(facs):
 
 def prodSum(n, k):
 	# breadth-first search, note that the sum increases as the number of product terms decreases
-
 	states = []
 	history = []
 	target = n - k

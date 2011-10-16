@@ -12,4 +12,4 @@ def p129(limit):
 		if A(n) > limit:
 			return n
 
-print(p129(10 ** 6))
+print(p129(10 ** 6)) # 1000023

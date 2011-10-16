@@ -1,4 +1,4 @@
-#not done
+# not finished
 
 import random
 

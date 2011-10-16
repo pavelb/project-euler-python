@@ -9,9 +9,9 @@ def cached(fn):
 transition = [[0, 1, 2], [1, 3], [0, 1, 4], [1, 5], [0, 1], [1]]
 
 @cached
-def countPrizeStrings(depth, state = 0):
+def main(depth, state = 0):
 	if depth == 0: return 1
 	depth -= 1
-	return sum(countPrizeStrings(depth, s) for s in transition[state])
+	return sum(main(depth, s) for s in transition[state])
 
-print(countPrizeStrings(30))
+print(main(30)) # 1918080160

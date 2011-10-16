@@ -1,6 +1,6 @@
 from itertools import count
 
-def p207(limit):
+def main(limit):
 	# k = (2^t)^2 - 2^t, where 2^t is an integer
 	# hence t = log2(n), n integer
 	# hence k = n^2 - n
@@ -11,4 +11,4 @@ def p207(limit):
 		elif perfect < limit * (n - 1):
 			return n * (n - 1)
 
-print(p207(1.0 / 12345))
+print(main(1.0 / 12345)) # 44043947822

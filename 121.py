@@ -11,8 +11,8 @@ def step(turns):
 	k = sum(divmod(turns, 2))
 	return sum(poly[:k]), sum(poly)
 
-def p121(turns):
+def main(turns):
 	n, d = step(turns)
 	return d // n
 
-print(p121(15))
+print(main(15)) # 2269

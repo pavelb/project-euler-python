@@ -14,11 +14,7 @@ def cycle(d):
 	return rv[mem.index(n):]
 
 def main(limit):
-<<<<<<< HEAD
 	cycleLen = lambda d: len(cycle(d))
 	return max(range(2, limit), key=cycleLen)
-=======
-	return max(range(2, limit), key = lambda d: len(cycle(d)))
->>>>>>> upstream/master
 
 print(main(1000)) # 983

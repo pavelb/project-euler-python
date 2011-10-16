@@ -1,4 +1,4 @@
-import random
+# not finished
 
 def sumDigits(n):
 	rv = 0

@@ -11,14 +11,14 @@ def group(iterable):
 		else: rv[i] = 1
 	return rv
 
-def p205(a, b, c, d):
+def main(a, b, c, d):
 	p1rolls = roll(a, b)
 	p2rolls = roll(c, d)
 	wins = 0
-	for p1roll, p1count in p1rolls.iteritems():
-		for p2roll, p2count in p2rolls.iteritems():
+	for p1roll, p1count in p1rolls.items():
+		for p2roll, p2count in p2rolls.items():
 			if p1roll > p2roll:
 				wins += p1count * p2count
 	return round(float(wins) / a ** b / c ** d, 7)
 
-print(p205(4, 9, 6, 6))
+print(main(4, 9, 6, 6)) # 0.5731441

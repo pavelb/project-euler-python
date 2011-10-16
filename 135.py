@@ -1,4 +1,4 @@
-import random
+#not finished
 
 def primesUpTo(last):
 	sieve = [True] * (last + 1)

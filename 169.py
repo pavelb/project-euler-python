@@ -1,10 +1,3 @@
-def fusc2(n):
-	if n <= 0: return 0
-	if n == 1: return 1
-	if n & 1 == 0: return fusc(n >> 1)
-	t = (n - 1) >> 1
-	return fusc(t) + fusc(t + 1)
-
 def fusc(n):
 	a = 1
 	b = 0
@@ -16,4 +9,7 @@ def fusc(n):
 		n >>= 1
 	return b
 
-print(fusc(10 ** 25 + 1))
+def main(n):
+	return fusc(n)
+
+print(main(10 ** 25 + 1)) # 178653872807

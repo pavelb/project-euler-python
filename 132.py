@@ -1,4 +1,4 @@
-# not done
+# not finished
 
 from lib import Primes
 from itertools import count

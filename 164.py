@@ -7,7 +7,10 @@ def cached(fn):
 	return new
 
 @cached
-def gen(depth, n1 = 0, n2 = 0): return 1 if depth == 0 else sum(gen(depth - 1, n2, n3) for n3 in range(10 - n1 - n2))
-def p164(depth): return gen(depth) - gen(depth - 1)
+def gen(depth, n1 = 0, n2 = 0):
+	return 1 if depth == 0 else sum(gen(depth - 1, n2, n3) for n3 in range(10 - n1 - n2))
 
-print(p164(20))
+def main(depth):
+	return gen(depth) - gen(depth - 1)
+
+print(main(20)) # 378158756814587

@@ -1,3 +1,5 @@
+# not finished
+
 def primesUpTo(last):
 	sieve = [True] * (last + 1)
 	sieve[0] = False
@@ -18,7 +20,7 @@ def factor(n):
 			count = 0
 			while n % p == 0:
 				count += 1
-				n /= p
+				n //= p
 			sq = n ** 0.5
 			rv.append([p, count])
 		i += 1
@@ -34,13 +36,13 @@ def prod(iterable):
 	for n in iterable: p *= n
 	return p
 
-def p179():
+def main():
 	rv = 0
 	ldc = 0
-	for n in xrange(2, int(10 ** 7) + 1):
+	for n in range(2, int(10 ** 7) + 1):
 		dc = numDivisors(factor(n))
 		if dc == ldc: rv += 1
 		ldc = dc
 	return rv
 
-print(p179())
+print(main())

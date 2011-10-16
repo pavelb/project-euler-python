@@ -1,3 +1,5 @@
+# not finished
+
 from math import floor, log, factorial
 
 def primesUpTo(last):

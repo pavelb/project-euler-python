@@ -54,17 +54,4 @@ def main(k):
 	# generate all pandigital sets uniquely and count the ones containing only primes
 	return countPrimeSets(k)
 
-from time import clock
-a = clock()
 print(main([1, 2, 3, 4, 5, 6, 7, 8, 9])) # 44680
-print(clock() - a)
-
-from itertools import chain, combinations
-
-def partition(s):
-	n = len(s)
-	b, mid, e = [0], list(range(1, n)), [n]
-	splits = (d for i in range(n) for d in combinations(mid, i))
-	return [[s[sl] for sl in map(slice, chain(b, d), chain(d, e))] for d in splits]
-
-#for p in partition([1, 2, 3, 4]): print(p)

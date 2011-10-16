@@ -1,17 +1,7 @@
-<<<<<<< HEAD
 from lib import ngonalNums, takeLen
 
 def ngonalNumsOfLen(n, k):
 	return list(takeLen(k, ngonalNums(n)))
-=======
-from lib import ngonalNums
-from itertools import dropwhile, takewhile
-
-def ngonalNumsOfLen(n, digits):
-	lbound = pow(10, digits - 1)
-	ubound = 10 * lbound
-	return list(takewhile(lambda n: n < ubound, dropwhile(lambda n: n < lbound, ngonalNums(n))))
->>>>>>> upstream/master
 
 tri, squ, pen, hex, hep, oct = range(6)
 nums = [[], [], [], [], [], []]
