@@ -17,4 +17,4 @@ def main(N, solns):
 
 	return rv
 
-print(main(1000000, 10)) # 4989
+print(main(50000000, 1)) # 2544559
