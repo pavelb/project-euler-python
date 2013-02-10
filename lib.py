@@ -1,4 +1,4 @@
-from itertools import count, islice, takewhile, dropwhile
+from itertools import count, islice, takewhile, dropwhile, product
 from math import sqrt, floor, log10, factorial
 from heapq import heappush, heappop
 
@@ -7,8 +7,8 @@ class Primes:
 	computedLen = 0
 	refLen = 0
 
-	def __init__(self):
-		self.compute(2 ** 16)
+	def __init__(self, n=65536):
+		self.compute(n)
 
 	def compute(self, n): # compute all primes <= n
 		# http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
@@ -48,16 +48,10 @@ class Primes:
 		if n > 1:
 			yield n, 1
 
-	#def divisors(self, n, proper=False):
-	#	if n > 0:
-	#		parts = list([pow(b, i) for i in range(1, e + 1)] for b, e in self.factors(n))
-	#		for k in range(len(parts) + 1):
-	#			for tuples in combinations(parts, k):
-	#				for tuple in product(*tuples):
-	#					d = multiply(tuple)
-	#					if proper and d == n:
-	#						return
-	#						yield d
+	def divisors(self, n):
+	    factors = list(self.factors(n))
+	    for exps in product(*(range(e + 1) for _, e in factors)):
+	    	yield multiply(b ** e for (b, _), e in zip(factors, exps))
 
 	def sumDivisors(self, n, proper=True):
 		# http://en.wikipedia.org/wiki/Divisor_function
