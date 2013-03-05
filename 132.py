@@ -1,26 +1,24 @@
-# not finished
-
 from lib import Primes
-from itertools import count
 
 primes = Primes()
 
-def isFactor(p, e):
-	return pow(10, e + 1, 9 * p) == 1
+def isFactor(e, p):
+	# return (10^e - 1) / 9 == 0 mod p
+	# return (10^e - 1) / 9 == kp
+	# return 10^e - 1 == k9p
+	# return 10^e == 1 + k9p
+	# return 10^e == 1 mod 9p
+	return pow(10, e, 9 * p) == 1
 
-def main(primeCount, e):
-	rv = 0
-	for p in count(1, 2):
-		if not primes.isPrime(p):
-			continue
-		if primeCount == 0:
+def main(e, target):
+	factors = []
+	for p in primes.gen():
+		if len(factors) == target:
 			break
 		i = 1
-		while isFactor(pow(p, i), e):
-			print(40 - primeCount + 1, p)
-			rv += p
-			primeCount -= 1
+		while isFactor(e, pow(p, i)):
+			factors.append(p)
 			i += 1
-	return rv
+	return sum(factors)
 
-print(main(40, 10 ** 9))
+print(main(10 ** 9, 40))  # 843296
