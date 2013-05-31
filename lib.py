@@ -278,10 +278,11 @@ def Dijkstra(vertices, neighbours, distance, start):
 		dist[v] = float('inf')
 		prev[v] = None
 	dist[start] = distance(start, start)
-	while len(Q) > 0:
-		u = min(Q, key=lambda c: dist[c])
-		if dist[u] == float('inf'): break
+	while Q:
+		u = min(Q, key=dist.get)
 		Q.remove(u)
+		if dist[u] == float('inf'):
+			break
 		for v in neighbours(u):
 			alt = dist[u] + distance(u, v)
 			if alt < dist[v]:
