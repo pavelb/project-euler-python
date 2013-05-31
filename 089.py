@@ -41,13 +41,13 @@ def main(filename):
 	with open(filename) as f:
 		for line in f:
 			numeral = line.strip()
-			print(numeral, end=", ")
+			# print(numeral, end=", ")
 			stdout.flush()
 			num = numeral2num(numeral)
-			print(num, end=", ")
+			# print(num, end=", ")
 			stdout.flush()
 			numeral2 = num2numeral(num)
-			print(numeral2)
+			# print(numeral2)
 			stdout.flush()
 			saved += len(numeral) - len(numeral2)
 	return saved
