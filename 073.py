@@ -7,4 +7,5 @@ def main(left, right, n):
 		count += 1
 	return count
 
-print(main((1, 3), (1, 2), 12000)) # 7295372
+if __name__ == '__main__':
+	print(main((1, 3), (1, 2), 12000)) # 7295372

@@ -13,4 +13,5 @@ def main(alim, blim):
 	a, b = max(coeff, key=lambda c: countPrimeSets(c[0], c[1]))
 	return a * b
 
-print(main(1000, 1000)) # -59231
+if __name__ == '__main__':
+	print(main(1000, 1000)) # -59231

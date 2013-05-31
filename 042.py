@@ -7,4 +7,5 @@ def main(file):
 	sums = map(charSum, words)
 	return sum(map(triangular, sums))
 
-main('042.txt')) # 162
+if __name__ == '__main__':
+	print(main('042.txt')) # 162

@@ -7,9 +7,10 @@ def A(n):
 		if pow(10, k, 9 * n) == 1:
 			return k
 
-def p129(limit):
+def main(limit):
 	for n in count(limit):
 		if A(n) > limit:
 			return n
 
-print(p129(10 ** 6)) # 1000023
+if __name__ == '__main__':
+	print(main(10 ** 6)) # 1000023

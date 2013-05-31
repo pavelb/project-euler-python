@@ -91,13 +91,14 @@ def rank(hand):
 		return highest(get(hand, 2)) + 14 * 1
 	return highest(hand)
 
-def p54():
+def main(filename):
 	count = 0
-	with open('054.txt', 'r') as f:
+	with open(filename, 'r') as f:
 		for line in f:
 			a, b, c, d, e, f, g, h, i, j = line.strip().split(' ')
 			if rank([a, b, c, d, e]) > rank([f, g, h, i, j]):
 				count += 1
 	return count
 
-print(p54()) # 376
+if __name__ == '__main__':
+	print(main('054.txt')) # 376

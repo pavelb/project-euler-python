@@ -10,4 +10,5 @@ def main(iterator, n):
 		n %= f
 	return rv
 
-print(main(range(10), 10 ** 6)) # 2783915460
+if __name__ == '__main__':
+	print(main(range(10), 10 ** 6)) # 2783915460
