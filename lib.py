@@ -6,6 +6,7 @@ class Primes:
 	computed = None
 	computedLen = 0
 	refLen = 0
+	sieve = []
 
 	def __init__(self, n=65536):
 		self.compute(n)
@@ -19,6 +20,7 @@ class Primes:
 		for i in range(2, nroot + 1):
 			if sieve[i]:
 				sieve[i * i: n + 1:i] = [False] * (n // i - i + 1)
+		self.sieve = sieve
 		self.computed = [i for i in range(n + 1) if sieve[i]]
 		self.computedLen = len(self.computed)
 		self.refLen = n
@@ -60,6 +62,8 @@ class Primes:
 		return rv - n if proper else rv
 
 	def isPrime(self, n):
+		if n < len(self.sieve):
+			return self.sieve[n]
 		return n > 1 and all(b == 1 or b == n for b, _ in self.factors(n))
 
 	def phi(self, n):
