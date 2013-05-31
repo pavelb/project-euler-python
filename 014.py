@@ -1,12 +1,23 @@
-def collatz(n):
-	while n > 1:
-		yield n
-		n = n // 2 if n % 2 == 0 else 3 * n + 1
-	yield 1
+class Collatz(object):
+	def __init__(self):
+		self.mem = {1: 1}
+
+	def chainLen(self, n):
+		nums = []
+		while n > 1:
+			if n in self.mem:
+				break
+			nums.append(n)
+			n = n // 2 if n % 2 == 0 else 3 * n + 1
+		for m in reversed(nums):
+			self.mem[m] = 1 + self.mem[n]
+			n = m
+		return self.mem[n]
 
 def main(lim):
-	chainlen = lambda n: sum(1 for _ in collatz(n))
-	return max(range(lim), key=chainlen)
+	collatz = Collatz()
+	chainlen = lambda n: collatz.chainLen(n)
+	return max(range(1, lim), key=chainlen)
 
 if __name__ == '__main__':
 	print(main(1000000)) # 837799
