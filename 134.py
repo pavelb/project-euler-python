@@ -20,4 +20,5 @@ def main():
 	pr2 = islice(pr2, 3, None)
 	return sum(starmap(S, zip(pr1, pr2)))
 
-print(main()) # 18613426663617118
+if __name__ == '__main__':
+	print(main()) # 18613426663617118

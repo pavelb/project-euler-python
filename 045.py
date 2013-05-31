@@ -9,4 +9,5 @@ def main(limit):
 		nums[i] = next(gens[i])
 	return nums[0]
 
-print(main(40755)) # 1533776805
+if __name__ == '__main__':
+	print(main(40755)) # 1533776805

@@ -13,4 +13,5 @@ def main(limit, target):
 		else:
 			mem = []
 
-print(main(4, 4)) # 134043
+if __name__ == '__main__':
+	print(main(4, 4)) # 134043

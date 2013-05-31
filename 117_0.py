@@ -9,4 +9,5 @@ def main(k, blocks):
 		rs[n] = 2 * rs[n - 1] - rs[n - (k + 1)]
 	return rs[blocks] - rs[blocks - 1]
 
-print(main(4, 50)) # 100808458960497
+if __name__ == '__main__':
+	print(main(4, 50)) # 100808458960497

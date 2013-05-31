@@ -21,4 +21,5 @@ def main():
 	# There is less code here than it took to describe the problem
 	return sum(map(canMakeSquares, product(combinations(range(10), 6), repeat=2))) // 2
 
-print(main()) # 1217
+if __name__ == '__main__':
+	print(main()) # 1217

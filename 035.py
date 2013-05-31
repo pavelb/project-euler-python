@@ -10,4 +10,5 @@ def circular(p):
 def main(limit):
 	return sum(map(circular, takewhile(lambda n: n < limit, primes.gen())))
 
-print(main(1000000)) # 55
+if __name__ == '__main__':
+	print(main(1000000)) # 55

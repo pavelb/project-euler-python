@@ -8,4 +8,5 @@ def tetratemod(a, k, m):
 def main(a, b, c):
 	return tetratemod(b, c, 10 ** a)
 
-print(main(8, 1777, 1855)) # 95962097
+if __name__ == '__main__':
+	print(main(8, 1777, 1855)) # 95962097

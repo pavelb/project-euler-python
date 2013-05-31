@@ -16,4 +16,5 @@ def main(limit):
 	cycles = map(cycle, range(1, limit + 1))
 	return min(max(cycles, key=len))
 
-print(main(1000000)) # 14316
+if __name__ == '__main__':
+	print(main(1000000)) # 14316

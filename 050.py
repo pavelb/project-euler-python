@@ -5,7 +5,7 @@ primes = Primes()
 
 def main(lim):
 	# trick: compute the running sum first so we can compute the sum of primes i to j in constant time
-	
+
 	sums = list(runningSum(takewhile(lambda p: p <= lim, primes.gen())))
 	size = len(sums)
 
@@ -24,4 +24,5 @@ def main(lim):
 				return total
 		length -= 1
 
-print(main(1000000)) # 997651
+if __name__ == '__main__':
+	print(main(1000000)) # 997651

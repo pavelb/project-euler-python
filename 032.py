@@ -14,4 +14,5 @@ def main(length):
 					yield ans
 	return sum(seq(length))
 
-print(main(9)) # 45228
+if __name__ == '__main__':
+	print(main(9)) # 45228

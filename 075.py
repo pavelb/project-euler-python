@@ -7,4 +7,5 @@ def main(lim):
 	perimeters = takewhile(lambda L: L <= lim, perimeters)
 	return sum(sum(1 for _ in g) == 1 for _, g in groupby(perimeters))
 
-print(main(1500000)) # 161667
+if __name__ == '__main__':
+	print(main(1500000)) # 161667

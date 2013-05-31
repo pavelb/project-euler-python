@@ -12,4 +12,5 @@ def fusc(n):
 def main(n):
 	return fusc(n)
 
-print(main(10 ** 25 + 1)) # 178653872807
+if __name__ == '__main__':
+	print(main(10 ** 25 + 1)) # 178653872807

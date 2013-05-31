@@ -10,4 +10,5 @@ def main(limit):
 	# trick: Pell equation, solutions are convergents of sqrt(D)
 	return max(range(2, limit + 1), key=minX)
 
-print(main(1000)) # 661
+if __name__ == '__main__':
+	print(main(1000)) # 661

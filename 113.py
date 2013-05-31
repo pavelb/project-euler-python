@@ -18,4 +18,5 @@ def countNotBouncy(digits):
 def main(k):
 	return countNotBouncy(k)
 
-print(main(100)) # 51161058134250
+if __name__ == '__main__':
+	print(main(100)) # 51161058134250

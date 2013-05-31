@@ -5,4 +5,5 @@ def smk(k, n): # sum of multiples of k in [2, n)
 def main(primeCount):
 	return smk(3, primeCount) + smk(5, primeCount) - smk(3 * 5, primeCount)
 
-print(main(1000)) # 233168
+if __name__ == '__main__':
+	print(main(1000)) # 233168

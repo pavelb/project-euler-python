@@ -21,4 +21,5 @@ def main(limit):
 	# to get integer paths use pythagorean triples
 	return next(M for M in count() if countPaths(M) > limit)
 
-print(main(10 ** 6)) # 1818
+if __name__ == '__main__':
+	print(main(10 ** 6)) # 1818

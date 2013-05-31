@@ -34,4 +34,5 @@ def countStreak(terms):
 def main():
 	return num(max(combinations(range(10), 4), key=countStreak))
 
-print(main()) # 1258
+if __name__ == '__main__':
+	print(main()) # 1258

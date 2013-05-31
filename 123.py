@@ -9,4 +9,5 @@ def main(limit):
 		if n % 2 == 1 and 2 * n * p > limit:
 			return n
 
-print(main(10 ** 10)) # 21035
+if __name__ == '__main__':
+	print(main(10 ** 10)) # 21035

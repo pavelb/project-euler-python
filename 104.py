@@ -6,4 +6,5 @@ def main():
 	good = lambda n: n > 123456789 and goodLast(n) and goodFirst(n)
 	return next(k for k, n in enumerate(fibonaccis()) if good(n))
 
-print(main()) # 329468
+if __name__ == '__main__':
+	print(main()) # 329468

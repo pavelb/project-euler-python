@@ -6,4 +6,5 @@ def main(n, k):
 	prods = map(multiply, combinations(kdigitnums, n))
 	return max(filter(palindrome, prods))
 
-print(main(2, 3)) # 906609
+if __name__ == '__main__':
+	print(main(2, 3)) # 906609

@@ -18,4 +18,5 @@ def main(n):
 
 	return count
 
-print(main(12))  # 21384
+if __name__ == '__main__':
+	print(main(12))  # 21384

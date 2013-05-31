@@ -18,4 +18,5 @@ def main(limit):
 	goodPrimes = filter(good, primes.gen())
 	return sum(islice(goodPrimes, limit))
 
-print(main(11)) # 748317
+if __name__ == '__main__':
+	print(main(11)) # 748317

@@ -72,4 +72,5 @@ def main(filename):
 	postWeight = sum(v.key for v in g.V if v.key < float('inf'))
 	return preWeight - postWeight
 
-print(main('107.txt'))  # 259679
+if __name__ == '__main__':
+	print(main('107.txt'))  # 259679

@@ -8,4 +8,5 @@ def main(lim):
 	chainlen = lambda n: sum(1 for _ in collatz(n))
 	return max(range(lim), key=chainlen)
 
-print(main(1000000)) # 837799
+if __name__ == '__main__':
+	print(main(1000000)) # 837799

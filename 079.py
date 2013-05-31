@@ -21,4 +21,5 @@ def main(file):
 
 	return rv + ''.join(items)
 
-print(main('079.txt')) # 73162890
+if __name__ == '__main__':
+	print(main('079.txt')) # 73162890

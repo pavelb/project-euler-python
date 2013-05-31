@@ -17,4 +17,5 @@ def main(limit):
 	cycleLen = lambda d: len(cycle(d))
 	return max(range(2, limit), key=cycleLen)
 
-print(main(1000)) # 983
+if __name__ == '__main__':
+	print(main(1000)) # 983

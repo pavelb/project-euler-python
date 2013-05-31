@@ -23,4 +23,5 @@ def count(t):
 def main():
 	return sum(1 <= count(t) <= 10 for t in range(8, 10 ** 6 + 1, 4))
 
-print(main()) # 209566
+if __name__ == '__main__':
+	print(main()) # 209566

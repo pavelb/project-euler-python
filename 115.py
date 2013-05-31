@@ -8,4 +8,5 @@ def main(m, limit):
 			return n
 		mem.append(F)
 
-print(main(50, 1000000)) # 168
+if __name__ == '__main__':
+	print(main(50, 1000000)) # 168

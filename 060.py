@@ -18,4 +18,5 @@ def main(lim):
 					return sum(prims[j] for j in nt)
 				tuples.append(nt)
 
-print(main(5)) # 26033
+if __name__ == '__main__':
+	print(main(5)) # 26033

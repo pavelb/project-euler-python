@@ -7,4 +7,5 @@ def main():
 	pandigitals = permutations(range(10))
 	return sum(map(num, filter(good, pandigitals)))
 
-print(main()) # 16695334890
+if __name__ == '__main__':
+	print(main()) # 16695334890

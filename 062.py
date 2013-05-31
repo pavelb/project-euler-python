@@ -15,4 +15,5 @@ def main(lim):
 			record.clear()
 		record.setdefault(key, []).append(n)
 
-print(main(5)) # 127035954683
+if __name__ == '__main__':
+	print(main(5)) # 127035954683

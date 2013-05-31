@@ -6,4 +6,5 @@ def main(m, blocks):
 		mem[n] = 1 + mem[n - 1] + sum(mem[k] for k in range(n - m))
 	return mem[blocks]
 
-print(main(3, 50)) # 16475640049
+if __name__ == '__main__':
+	print(main(3, 50)) # 16475640049

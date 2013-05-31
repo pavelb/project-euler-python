@@ -17,4 +17,5 @@ def main(limit, ubound):
 		rv = sorted(rv2)
 	return len(rv)
 
-print(main(100, 10 ** 9)) # 2944730
+if __name__ == '__main__':
+	print(main(100, 10 ** 9)) # 2944730

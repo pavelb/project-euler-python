@@ -7,4 +7,5 @@ def main():
 		n += 10
 	return n
 
-print(main()) # 1389019170
+if __name__ == '__main__':
+	print(main()) # 1389019170

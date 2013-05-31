@@ -17,4 +17,5 @@ def main(limit):
 				minn, minphi = n, phi
 	return minn
 
-print(main(10 ** 7)) # 8319823
+if __name__ == '__main__':
+	print(main(10 ** 7)) # 8319823

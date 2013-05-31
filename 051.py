@@ -22,4 +22,5 @@ def main(lim):
 		if len(results) > 0:
 			return min(map(sorted, results))[0]
 
-print(main(8)) # 121313
+if __name__ == '__main__':
+	print(main(8)) # 121313

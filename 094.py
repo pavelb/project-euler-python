@@ -26,4 +26,5 @@ def main(limit):
 			if p2 <= limit and (t - 2) % 3 == 0:
 				rv += p2
 
-print(main(10 ** 9)) # 518408346
+if __name__ == '__main__':
+	print(main(10 ** 9)) # 518408346

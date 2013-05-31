@@ -19,4 +19,5 @@ def main(limit):
 		p1 = primes.get(i)
 	return count
 
-print(main(10 ** 8)) # 17427258
+if __name__ == '__main__':
+	print(main(10 ** 8)) # 17427258

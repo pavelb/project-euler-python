@@ -59,4 +59,5 @@ def OP(k, n):
 def main(limit):
 	return sum(OP(k, k + 1) for k in range(1, limit + 1))
 
-print(main(10)) # 37076114526
+if __name__ == '__main__':
+	print(main(10)) # 37076114526

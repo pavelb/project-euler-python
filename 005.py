@@ -16,4 +16,5 @@ def main(n):
 	factors = takewhile(lambda k: k <= n, primes.gen())
 	return multiply(map(maxContribution, factors))
 
-print(main(20)) # 232792560
+if __name__ == '__main__':
+	print(main(20)) # 232792560

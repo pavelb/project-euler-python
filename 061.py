@@ -33,4 +33,5 @@ def get(tuple, req):
 def main():
 	return next(sum(tuple) for n in nums[tri] for tuple in get([n], [1, 2, 3, 4, 5]))
 
-print(main()) # 28684
+if __name__ == '__main__':
+	print(main()) # 28684

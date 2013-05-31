@@ -17,4 +17,5 @@ def main(lim):
 	n, _ = gen(lim)
 	return sum(digits(n))
 
-print(main(100)) # 272
+if __name__ == '__main__':
+	print(main(100)) # 272

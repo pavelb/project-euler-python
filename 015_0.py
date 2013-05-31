@@ -14,4 +14,5 @@ def cached(fn):
 def main(w, h):
 	return 1 if w == 0 or h == 0 else main(w - 1, h) + main(w, h - 1)
 
-print(main(20, 20)) # 137846528820
+if __name__ == '__main__':
+	print(main(20, 20)) # 137846528820

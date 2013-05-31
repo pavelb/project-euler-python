@@ -9,4 +9,5 @@ def main(limit):
 		mem[p] += 1
 	return max(range(limit + 1), key=lambda i: mem[i])
 
-print(main(1000)) # 840
+if __name__ == '__main__':
+	print(main(1000)) # 840

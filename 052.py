@@ -6,4 +6,5 @@ def main(limit):
 	good = lambda n: n > 0 and same(map(digitCountMap, (f * n for f in facs)))
 	return next(filter(good, count()))
 
-print(main(6)) # 142857
+if __name__ == '__main__':
+	print(main(6)) # 142857

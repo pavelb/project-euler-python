@@ -71,7 +71,7 @@ def initEmpties(board):
 
 # eliminate options from the bitmap of each modifiable cell based on the fixed cells
 # then check if any bitmap only has a single value i s.t. B[i] is true and replace the bitmap with 1+i
-# as it is the only option for that cell 
+# as it is the only option for that cell
 def eliminateAndSimplify(board):
 	# eliminate digit from call modifiable cells in row i
 	def eliminateLineH(digit, board, i):
@@ -204,4 +204,5 @@ def main(file): # 24702
 			rv += board[0][0] * 100 + board[0][1] * 10 + board[0][2]
 	return rv
 
-print(main('096.txt')) # 24702
+if __name__ == '__main__':
+	print(main('096.txt')) # 24702

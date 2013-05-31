@@ -5,4 +5,5 @@ def main(file):
 		names = sorted(f.readline().replace('"', '').split(','))
 		return sum((i + 1) * sum(map(charInd, name)) for i, name in enumerate(names))
 
-print(main('022.txt')) # 871198282
+if __name__ == '__main__':
+	print(main('022.txt')) # 871198282

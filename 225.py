@@ -20,4 +20,5 @@ def main(limit):
 					return n
 				break
 
-print(main(124)) # 2009
+if __name__ == '__main__':
+	print(main(124)) # 2009

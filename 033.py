@@ -18,4 +18,5 @@ def main():
 	n, d = reduceFrac(n, d)
 	return d
 
-print(main()) # 100
+if __name__ == '__main__':
+	print(main()) # 100

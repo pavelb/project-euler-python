@@ -20,4 +20,5 @@ def main(limit):
 				mem[tot] = True
 	return sum(mem)
 
-print(main(50000000)) # 1097343
+if __name__ == '__main__':
+	print(main(50000000)) # 1097343

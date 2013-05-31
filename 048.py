@@ -5,4 +5,5 @@ def main(k, limit):
 		rv = (rv + pow(n, n, mask)) % mask
 	return rv
 
-print(main(10, 1000)) # 9110846700
+if __name__ == '__main__':
+	print(main(10, 1000)) # 9110846700

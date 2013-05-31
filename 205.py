@@ -21,4 +21,5 @@ def main(a, b, c, d):
 				wins += p1count * p2count
 	return round(float(wins) / a ** b / c ** d, 7)
 
-print(main(4, 9, 6, 6)) # 0.5731441
+if __name__ == '__main__':
+	print(main(4, 9, 6, 6)) # 0.5731441

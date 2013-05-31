@@ -11,4 +11,5 @@ def main(file):
 
 	return 1 + max(range(len(nums)), key=log)
 
-print(main('099.txt')) # 709
+if __name__ == '__main__':
+	print(main('099.txt')) # 709

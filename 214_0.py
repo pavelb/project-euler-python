@@ -33,4 +33,5 @@ def main(limit, length):
 	return sum(clo.gen(length))
 
 # brute force, takes forever
-print(main(40000000, 25))  # 1677366278943
+if __name__ == '__main__':
+	print(main(40000000, 25))  # 1677366278943

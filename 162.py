@@ -17,4 +17,5 @@ def main(limit):
 	return hex(count).replace('0x', '').upper()
 
 
-print(main(16))  # 3D58725572C62302
+if __name__ == '__main__':
+	print(main(16))  # 3D58725572C62302

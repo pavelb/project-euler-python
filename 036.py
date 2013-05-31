@@ -22,4 +22,5 @@ def main(limit):
 	base10pal = takewhile(good, palindromes(10))
 	return sum(set(base2pal) & set(base10pal))
 
-print(main(1000000)) # 872187
+if __name__ == '__main__':
+	print(main(1000000)) # 872187

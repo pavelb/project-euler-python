@@ -17,4 +17,5 @@ def main(N, solns):
 
 	return rv
 
-print(main(50000000, 1)) # 2544559
+if __name__ == '__main__':
+	print(main(50000000, 1)) # 2544559

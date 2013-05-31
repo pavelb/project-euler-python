@@ -10,4 +10,5 @@ def main(file):
 		last = row
 	return table[0][0]
 
-print(main('018.txt')) # 1074
+if __name__ == '__main__':
+	print(main('018.txt')) # 1074

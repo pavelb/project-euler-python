@@ -11,4 +11,5 @@ def main(limit):
 		elif perfect < limit * (n - 1):
 			return n * (n - 1)
 
-print(main(1.0 / 12345)) # 44043947822
+if __name__ == '__main__':
+	print(main(1.0 / 12345)) # 44043947822

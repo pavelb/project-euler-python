@@ -15,4 +15,5 @@ def main(turns):
 	n, d = step(turns)
 	return d // n
 
-print(main(15)) # 2269
+if __name__ == '__main__':
+	print(main(15)) # 2269

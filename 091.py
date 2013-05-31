@@ -17,4 +17,5 @@ def main(limit):
 	rv += limit * limit # triangles where the right angle is at O
 	return rv
 
-print(main(50)) # 14234
+if __name__ == '__main__':
+	print(main(50)) # 14234

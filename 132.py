@@ -21,4 +21,5 @@ def main(e, target):
 			i += 1
 	return sum(factors)
 
-print(main(10 ** 9, 40))  # 843296
+if __name__ == '__main__':
+	print(main(10 ** 9, 40))  # 843296

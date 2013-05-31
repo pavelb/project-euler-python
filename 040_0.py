@@ -27,4 +27,5 @@ def d(n): # nth digit in concatenation of all numbers
 def main(indices):
 	return multiply(map(d, indices))
 
-print(main([1, 10, 100, 1000, 10000, 100000, 1000000])) # 210
+if __name__ == '__main__':
+	print(main([1, 10, 100, 1000, 10000, 100000, 1000000])) # 210

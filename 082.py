@@ -30,4 +30,5 @@ def main(file):
 
 	return Dijkstra(vertices, neighbours, distance, START)[FINISH]
 
-print(main('082.txt')) # 260324
+if __name__ == '__main__':
+	print(main('082.txt')) # 260324

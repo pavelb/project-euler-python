@@ -12,4 +12,5 @@ def main(w, h):
 				cell[j][i] = cell[j - 1][i] + cell[j][i - 1]
 	return cell[h - 1][w - 1]
 
-print(main(20, 20)) # 137846528820
+if __name__ == '__main__':
+	print(main(20, 20)) # 137846528820

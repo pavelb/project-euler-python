@@ -18,4 +18,5 @@ def seq():
 def main(n):
 	return next(islice(seq(), n - 1, n))
 
-print(main(30)) # 248155780267521
+if __name__ == '__main__':
+	print(main(30)) # 248155780267521

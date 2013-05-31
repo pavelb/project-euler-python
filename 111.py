@@ -25,4 +25,5 @@ def S(size, d):
 def main(k):
 	return sum(S(k, d) for d in range(10))
 
-print(main(10)) # 612407567715
+if __name__ == '__main__':
+	print(main(10)) # 612407567715

@@ -12,4 +12,5 @@ def dsum(n):
 def main():
 	return sum(dsum(n) for n in range(1, 101) if not square(n))
 
-print(main()) # 40886
+if __name__ == '__main__':
+	print(main()) # 40886

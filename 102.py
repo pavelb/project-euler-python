@@ -14,4 +14,5 @@ def main(file):
 		triangles = map(parseline, f)
 		return sum(starmap(inside, triangles))
 
-print(main('102.txt')) # 228
+if __name__ == '__main__':
+	print(main('102.txt')) # 228

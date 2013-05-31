@@ -17,4 +17,5 @@ def main(k):
 	trips = (trip for g in groups for trip in combinations(g, 3))
 	return [''.join(map(str, t)) for t in trips if sequence(*t)]
 
-print(main(4)) # 296962999629
+if __name__ == '__main__':
+	print(main(4)) # 296962999629

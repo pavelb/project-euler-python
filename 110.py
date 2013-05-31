@@ -22,4 +22,5 @@ def main(limit):
 			return rv
 		rv = n
 
-print(main(4000000)) # 9350130049860600
+if __name__ == '__main__':
+	print(main(4000000)) # 9350130049860600

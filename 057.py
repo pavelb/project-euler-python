@@ -10,4 +10,5 @@ def convergents2():
 def main(lim):
 	return sum(numLen(n) > numLen(d) for n, d in islice(convergents2(), lim))
 
-print(main(1000)) # 153
+if __name__ == '__main__':
+	print(main(1000)) # 153

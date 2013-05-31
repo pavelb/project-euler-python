@@ -20,4 +20,5 @@ def partitionFnGen(): # partition function over the primes
 def main(limit):
 	return next(i + 1 for i, p in enumerate(partitionFnGen()) if p > limit)
 
-print(main(5000)) # 71
+if __name__ == '__main__':
+	print(main(5000)) # 71

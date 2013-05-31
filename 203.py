@@ -62,4 +62,5 @@ def main(rows):
 			if squareFree(num): rv += getNumber(num)
 	return rv
 
-print(main(51)) # 34029210557338
+if __name__ == '__main__':
+	print(main(51)) # 34029210557338

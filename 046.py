@@ -9,4 +9,5 @@ def goldbach(n):
 def main():
 	return next(n for n in count(3, 2) if not primes.isPrime(n) and not goldbach(n))
 
-print(main()) # 5777
+if __name__ == '__main__':
+	print(main()) # 5777

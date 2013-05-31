@@ -5,4 +5,5 @@ primes = Primes()
 def main(n):
 	return max(b for b, _ in primes.factors(n))
 
-print(main(600851475143)) # 6857
+if __name__ == '__main__':
+	print(main(600851475143)) # 6857

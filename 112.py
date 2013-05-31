@@ -18,4 +18,5 @@ def main(target):
 		if b > target * n:
 			return n - 1
 
-print(main(0.99)) # 1587000
+if __name__ == '__main__':
+	print(main(0.99)) # 1587000

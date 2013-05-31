@@ -55,5 +55,6 @@ def main(filename):
 # I had to look up the solution method because I was getting incorrect answers.
 # I still don't know what the problem is, my old solution would minimize too much (to 956).
 # Is there a rule against IVIV being a valid way of saying 8?
-print(main("089.txt")) # 743
+if __name__ == '__main__':
+	print(main("089.txt")) # 743
 

@@ -21,4 +21,5 @@ def main(limit):
 			if i == limit:
 				return int(n)
 
-print(main(15)) # 1120149658760
+if __name__ == '__main__':
+	print(main(15)) # 1120149658760

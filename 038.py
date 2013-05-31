@@ -17,4 +17,5 @@ def main():
 	# since |[i]| <= |[2i]| have [i][2i] = [9999][99999] giving i = 9999
 	return max(map(cp, range(1, 9999)))
 
-print(main()) # 932718654
+if __name__ == '__main__':
+	print(main()) # 932718654

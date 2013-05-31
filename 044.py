@@ -7,4 +7,5 @@ def main():
 			if pentagonal(Pa + Pb) and pentagonal(Pa - Pb):
 				return Pa - Pb
 
-print(main()) # 5482660
+if __name__ == '__main__':
+	print(main()) # 5482660

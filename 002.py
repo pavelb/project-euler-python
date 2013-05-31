@@ -6,4 +6,5 @@ def main(limit):
 	evenf = islice(fibonaccis(), 0, None, 3)
 	return sum(takewhile(lambda n: n < limit, evenf))
 
-print(main(4000000)) # 4613732
+if __name__ == '__main__':
+	print(main(4000000)) # 4613732

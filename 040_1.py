@@ -15,4 +15,5 @@ def main(indices):
 		pos += len(d)
 	return rv
 
-print(main([1, 10, 100, 1000, 10000, 100000, 1000000])) # 210
+if __name__ == '__main__':
+	print(main([1, 10, 100, 1000, 10000, 100000, 1000000])) # 210

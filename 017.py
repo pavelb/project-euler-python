@@ -55,4 +55,5 @@ def name(n):
 def main(lim):
 	return sum(len(name(n)) for n in range(1, lim + 1))
 
-print(main(1000)) # 21124
+if __name__ == '__main__':
+	print(main(1000)) # 21124

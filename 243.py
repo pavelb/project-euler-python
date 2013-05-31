@@ -10,14 +10,14 @@ def main(limit_num, limit_denom):
 		return num * limit_denom < limit_num * denom
 
 	d = 1
-	
+
 	for n in count(2):
 		d *= n
 		if good(d): break
 
 	min_d = d
 	kernel = d
-	
+
 	for m in range(n, 1, -1):
 		kernel //= m
 		print("kernel: %d" % kernel)
@@ -30,4 +30,5 @@ def main(limit_num, limit_denom):
 				break
 
 # takes too long to terminate but comes up with the answer in a few minutes
-print(main(15499, 94744))  # 892371480
+if __name__ == '__main__':
+	print(main(15499, 94744))  # 892371480

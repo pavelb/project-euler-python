@@ -34,4 +34,5 @@ def main(filename):
 		return sum(map(sum, solve(file)))
 
 
-print(main('105.txt'))  # 73702
+if __name__ == '__main__':
+	print(main('105.txt'))  # 73702

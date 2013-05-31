@@ -11,4 +11,5 @@ def nonRepeatLen(n):
 def main(limit):
 	return sum(nonRepeatLen(n) == 60 for n in range(limit))
 
-print(main(10 ** 6)) # 402
+if __name__ == '__main__':
+	print(main(10 ** 6)) # 402

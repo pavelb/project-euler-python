@@ -11,4 +11,5 @@ def main(target):
 	distToTarget = lambda d: abs(target - countRec(d[0], d[1]))
 	return multiply(min(dims, key=distToTarget))
 
-print(main(2000000)) # 2772
+if __name__ == '__main__':
+	print(main(2000000)) # 2772

@@ -10,4 +10,5 @@ def main(limit):
 			if total > limit:
 				return blue
 
-print(main(10 ** 12)) # 756872327473
+if __name__ == '__main__':
+	print(main(10 ** 12)) # 756872327473

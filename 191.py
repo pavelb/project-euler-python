@@ -14,4 +14,5 @@ def main(depth, state = 0):
 	depth -= 1
 	return sum(main(depth, s) for s in transition[state])
 
-print(main(30)) # 1918080160
+if __name__ == '__main__':
+	print(main(30)) # 1918080160

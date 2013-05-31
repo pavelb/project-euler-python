@@ -54,4 +54,5 @@ def main(k):
 	# generate all pandigital sets uniquely and count the ones containing only primes
 	return countPrimeSets(k)
 
-print(main([1, 2, 3, 4, 5, 6, 7, 8, 9])) # 44680
+if __name__ == '__main__':
+	print(main([1, 2, 3, 4, 5, 6, 7, 8, 9])) # 44680

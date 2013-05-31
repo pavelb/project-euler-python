@@ -40,4 +40,5 @@ def mps(k):
 def main(lbound, ubound):
 	return sum(set(map(mps, range(lbound, ubound + 1))))
 
-print(main(2, 12000)) # 7587457
+if __name__ == '__main__':
+	print(main(2, 12000)) # 7587457

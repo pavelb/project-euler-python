@@ -59,4 +59,5 @@ def main(file):
 
 	return max(results())
 
-print(main('098.txt')) # 18769
+if __name__ == '__main__':
+	print(main('098.txt')) # 18769

@@ -8,4 +8,5 @@ def divisorCount(n):
 def main(n):
 	return next(t for t in ngonalNums(3) if divisorCount(t) > n)
 
-print(main(500)) # 76576500
+if __name__ == '__main__':
+	print(main(500)) # 76576500

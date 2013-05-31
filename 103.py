@@ -62,4 +62,5 @@ def main(n):
 	return ''.join(map(str, solve(n)))
 
 
-print(main(7))  # 20313839404245
+if __name__ == '__main__':
+	print(main(7))  # 20313839404245

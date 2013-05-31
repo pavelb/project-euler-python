@@ -33,4 +33,5 @@ def main():
 
 	return center.quantize(Decimal('.000000000001'), rounding = ROUND_UP)
 
-print(main()) # 1.002322108633
+if __name__ == '__main__':
+	print(main()) # 1.002322108633

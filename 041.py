@@ -10,4 +10,5 @@ def main():
 	pandigitals = map(num, permutations((7, 6, 5, 4, 3, 2, 1)))
 	return next(filter(primes.isPrime, pandigitals))
 
-print(main()) # 7652413
+if __name__ == '__main__':
+	print(main()) # 7652413

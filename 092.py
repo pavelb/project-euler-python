@@ -13,4 +13,5 @@ def main(limit):
 		mem[n] = mem[m]
 	return sum(mem)
 
-print(main(10000000)) # 8581146
+if __name__ == '__main__':
+	print(main(10000000)) # 8581146

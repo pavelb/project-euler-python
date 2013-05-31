@@ -11,4 +11,5 @@ def lycharel(n):
 def main(lim):
 	return sum(map(lycharel, range(1, lim)))
 
-print(main(10000)) # 249
+if __name__ == '__main__':
+	print(main(10000)) # 249

@@ -18,4 +18,5 @@ def main(lim):
 		if numPrimes < lim * total:
 			return 2 * r - 1
 
-print(main(0.1)) # 26241
+if __name__ == '__main__':
+	print(main(0.1)) # 26241

@@ -21,7 +21,9 @@ def keys(encoded):
 
 def main():
 	rv = []
-	encoded = list(map(int, open('059.txt').read().split(',')))
+	with open('059.txt') as f:
+		data = f.read().split(',')
+	encoded = list(map(int, data))
 	for key, keyStr, text in keys(encoded):
 		enc = encoded[:]
 		for i in range(len(enc)):
@@ -29,4 +31,5 @@ def main():
 		rv.append('%s\n%s - %s' % (text, keyStr, sum(enc)))
 	return '\n'.join(rv)
 
-print(main()) # 107359
+if __name__ == '__main__':
+	print(main()) # 107359

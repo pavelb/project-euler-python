@@ -16,4 +16,5 @@ def solutions():
 def main(limit):
 	return sum(islice(solutions(), limit))
 
-print(main(12)) # 1118049290473932
+if __name__ == '__main__':
+	print(main(12)) # 1118049290473932

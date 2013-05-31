@@ -24,4 +24,5 @@ def main(limit):
 			M = 1 + next(m for m in reversed(range(M)) if mem[m] <= limit) # smallest M that passes the limit
 			return M
 
-print(main(10 ** 6)) # 1818
+if __name__ == '__main__':
+	print(main(10 ** 6)) # 1818

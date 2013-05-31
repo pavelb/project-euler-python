@@ -7,4 +7,5 @@ def sumOfSquare(n):
 def main(n):
 	return squareOfSum(n) - sumOfSquare(n)
 
-print(main(100)) # 25164150
+if __name__ == '__main__':
+	print(main(100)) # 25164150

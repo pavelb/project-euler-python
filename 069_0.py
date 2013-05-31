@@ -10,4 +10,5 @@ def main(lim):
 		if prod * p > lim:
 			return prod
 
-print(main(1000000)) # 510510
+if __name__ == '__main__':
+	print(main(1000000)) # 510510

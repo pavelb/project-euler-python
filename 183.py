@@ -11,4 +11,5 @@ def D(N):
 def main(limit):
 	return sum(D(N) for N in range(5, limit + 1))
 
-print(main(10 ** 4)) # 48861552
+if __name__ == '__main__':
+	print(main(10 ** 4)) # 48861552

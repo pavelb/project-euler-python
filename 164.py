@@ -13,4 +13,5 @@ def gen(depth, n1 = 0, n2 = 0):
 def main(depth):
 	return gen(depth) - gen(depth - 1)
 
-print(main(20)) # 378158756814587
+if __name__ == '__main__':
+	print(main(20)) # 378158756814587

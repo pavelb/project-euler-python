@@ -10,4 +10,5 @@ def main(limit):
 	seq = map(primes.isPrime, seq)
 	return sum(seq)
 
-print(main(10 ** 6)) # 173
+if __name__ == '__main__':
+	print(main(10 ** 6)) # 173

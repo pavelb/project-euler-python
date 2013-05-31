@@ -4,4 +4,5 @@ from math import factorial
 def main(n):
 	return sum(digits(factorial(n)))
 
-print(main(100)) # 648
+if __name__ == '__main__':
+	print(main(100)) # 648

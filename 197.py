@@ -13,4 +13,5 @@ def main():
 		last = a
 		n = np
 
-print(main()) # 1.710637717
+if __name__ == '__main__':
+	print(main()) # 1.710637717

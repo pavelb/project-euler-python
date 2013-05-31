@@ -8,4 +8,5 @@ def main(k, blocks):
 		sums[n] = sums[n - 1] + fill[n]
 	return fill[blocks]
 
-print(main(4, 50)) # 100808458960497
+if __name__ == '__main__':
+	print(main(4, 50)) # 100808458960497

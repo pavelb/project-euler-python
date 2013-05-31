@@ -7,4 +7,5 @@ def main(lim):
 	amicable = lambda n: d[n] < lim and n == d[d[n]] and n != d[n]
 	return sum(filter(amicable, range(lim)))
 
-print(main(10000)) # 31626
+if __name__ == '__main__':
+	print(main(10000)) # 31626
