@@ -1,7 +1,7 @@
 def main(w, h):
 	# trick: use dynamic programming
 	w, h = w + 1, h + 1 # number of cells to number of vertices
-	cell = [[0] * w for j in range(h)]
+	cell = [[0] * w for _ in range(h)]
 	for i in range(w):
 		cell[0][i] = 1
 	for j in range(h):
