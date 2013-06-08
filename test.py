@@ -21,7 +21,7 @@ class TestProjectEuler(unittest.TestCase):
 
 	def test_004(self):
 		module = __import__('004')
-		answer = module.main(2, 3)
+		answer = module.main(3)
 		self.assertEqual(answer, 906609)
 
 
