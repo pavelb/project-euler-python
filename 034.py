@@ -1,11 +1,18 @@
-from itertools import count
+from itertools import count, product
 from math import factorial
-from lib import digits
+from lib import num
 
 def main():
-	fac9 = factorial(9)
-	limit = next(n for n in count() if pow(10, n) - 1 > fac9 * n) - 1
-	return sum(n for n in range(10, pow(10, limit)) if n == sum(map(factorial, digits(n))))
+	rv = 0
+	limit = next(n for n in count() if pow(10, n) - 1 > factorial(9) * n) - 1
+	for r in range(2, limit):
+		for d in product(range(10), repeat=r):
+			if d[0] == 0:
+				continue
+			n = num(d)
+			if n == sum(map(factorial, d)):
+				rv += n
+	return rv
 
 if __name__ == '__main__':
 	print(main()) # 40730
