@@ -1,17 +1,15 @@
-from itertools import combinations_with_replacement, takewhile
 from lib import Primes
 
-primes = Primes()
-
 def main(limit=28123):
+	primes = Primes(limit)
 	abundant = [n for n in range(limit + 1) if n < primes.sumDivisors(n)]
-	ab = set(abundant)
+	abundantSet = set(abundant)
 
 	def can(n):
 		for a in abundant:
-			if a > n / 2:
+			if 2 * a > n:
 				break
-			if n - a in ab:
+			if n - a in abundantSet:
 				return True
 		return False
 
