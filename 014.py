@@ -4,11 +4,11 @@ class Collatz(object):
 
 	def chainLen(self, n):
 		nums = []
-		while n > 1:
+		while n != 1:
 			if n in self.mem:
 				break
 			nums.append(n)
-			n = n // 2 if n % 2 == 0 else 3 * n + 1
+			n = n // 2 if n % 2 == 0 else (3 * n + 1) // 2
 		for m in reversed(nums):
 			self.mem[m] = 1 + self.mem[n]
 			n = m
@@ -16,8 +16,7 @@ class Collatz(object):
 
 def main(lim):
 	collatz = Collatz()
-	chainlen = lambda n: collatz.chainLen(n)
-	return max(range(1, lim), key=chainlen)
+	return max(range(1, lim), key=collatz.chainLen)
 
 if __name__ == '__main__':
 	print(main(1000000)) # 837799
