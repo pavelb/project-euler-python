@@ -1,5 +1,5 @@
 from lib import Primes, digits, num
-from itertools import islice, chain
+from itertools import islice
 
 primes = Primes()
 
@@ -7,12 +7,12 @@ def good(p):
 	if p < 10:
 		return False
 	d = digits(p)
-	splitd = lambda i: (d[:i], d[i:])
-	indices = range(1, len(d))
-	splits = map(splitd, indices)
-	parts = chain.from_iterable(splits)
-	partNums = map(num, parts)
-	return all(map(primes.isPrime, partNums))
+	for i in range(1, len(d)):
+		if not primes.isPrime(num(d[:i])):
+			return False
+		if not primes.isPrime(num(d[i:])):
+			return False
+	return True
 
 def main(limit):
 	goodPrimes = filter(good, primes.gen())
