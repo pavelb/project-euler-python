@@ -19,14 +19,14 @@ def keys(p, stars):
 			yield ''.join(pp)
 
 def main(lim):
-	for k in count(1):
+	for k in count():
 		for stars in range(1, k):
 			mem = defaultdict(list)
 			for p in takeLen(k, primes.gen()):
 				for key in keys(p, stars):
 					mem[key].append(p)
 			results = [t for t in mem.values() if len(t) >= lim]
-			if len(results) > 0:
+			if results:
 				return min(map(sorted, results))[0]
 
 if __name__ == '__main__':
