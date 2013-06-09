@@ -1,26 +1,33 @@
-from lib import Primes, digits, takeLen, same
+from lib import Primes, takeLen
 from itertools import count, combinations
+from collections import defaultdict
 
 primes = Primes()
 
-def sameDigit(n, pos):
-	d = digits(n)
-	return same(d[p] for p in pos)
+def keys(p, stars):
+	p = list(str(p))
+
+	mem = defaultdict(list)
+	for i, digit in enumerate(p):
+		mem[digit].append(i)
+
+	for digit, indices in mem.items():
+		for ind in combinations(indices, stars):
+			pp = list(p)
+			for i in ind:
+				pp[i] = '*'
+			yield ''.join(pp)
 
 def main(lim):
 	for k in count(1):
-		cache = dict()
-		for p in takeLen(k, primes.gen()):
-			for stars in range(1, k):
-				for starPos in combinations(range(k), stars):
-					if sameDigit(p, starPos):
-						key = str(p)
-						for s in starPos:
-							key = key[:s] + '*' + key[s + 1:]
-						cache.setdefault(key, []).append(p)
-		results = [t for t in cache.values() if len(t) >= lim]
-		if len(results) > 0:
-			return min(map(sorted, results))[0]
+		for stars in range(1, k):
+			mem = defaultdict(list)
+			for p in takeLen(k, primes.gen()):
+				for key in keys(p, stars):
+					mem[key].append(p)
+			results = [t for t in mem.values() if len(t) >= lim]
+			if len(results) > 0:
+				return min(map(sorted, results))[0]
 
 if __name__ == '__main__':
 	print(main(8)) # 121313
