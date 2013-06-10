@@ -585,7 +585,7 @@ class TestProjectEuler(unittest.TestCase):
 
 
 	def test_071(self):
-		module = __import__('070')
+		module = __import__('071')
 		answer = module.main((3, 7), 1000000)
 		self.assertEqual(answer, 428570)
 
