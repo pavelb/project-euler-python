@@ -29,7 +29,8 @@ def main():
 		for i in range(len(enc)):
 			enc[i] ^= key[i % 3]
 		rv.append('%s\n%s - %s' % (text, keyStr, sum(enc)))
-	return '\n'.join(rv)
+	# return '\n'.join(rv)
+	return sum(enc)
 
 if __name__ == '__main__':
 	print(main()) # 107359
