@@ -10,8 +10,7 @@ def gen(nums, primes, pos=0, prefix=0):
 
 	for n in nums:
 		nums.remove(n)
-		for g in gen(nums, primes, pos + 1, 10 * prefix + n):
-			yield g
+		yield from gen(nums, primes, pos + 1, 10 * prefix + n)
 		nums.add(n)
 
 

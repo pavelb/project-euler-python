@@ -27,8 +27,7 @@ def get(tuple, req):
 			newreq = req[:i] + req[i + 1:]
 			for n in nums[req[i]]:
 				if front(n) == back(tuple[-1]):
-					for rv in get(tuple + [n], newreq):
-						yield rv
+					yield from get(tuple + [n], newreq)
 
 def main():
 	return next(sum(tuple) for n in nums[tri] for tuple in get([n], [1, 2, 3, 4, 5]))
