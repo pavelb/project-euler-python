@@ -29,4 +29,4 @@ def main(lim):
     print(n, num)
 
 if __name__ == '__main__':
-  print(main(1000))
+  print(main(1000))  # 18522
