@@ -13,20 +13,16 @@
 # Therefore d*d-2*c*c=-1
 # This is a negative Pell's equation for n=2
 # Find integer solutions (d, c) to find the corresponding triangles (a, b, c)
-# The triangles are reduced so multiply by integers to reach target perimeter
+# Note a+b+c = (d-1)/2+(d-1)/2+1+c = d+c
+# The triangles are reduced so multiply perimeter by integers to reach target
 
 def main(lim):
   d, c = 1, 1
   rv = 0
-  while True:
+  while d+c < lim:
     d, c = 3*d+4*c, 2*d+3*c
-    a = (d-1)//2
-    b = a+1
-    m = lim // (a+b+c)
-    if m == 0:
-      break
-    rv += m
+    rv += lim // (d+c)
   return rv
 
 if __name__ == '__main__':
-  print(main(100000000))
+  print(main(100000000))  # 10057761
