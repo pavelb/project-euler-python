@@ -1,4 +1,4 @@
-# Consider (a pythagorean triple (a, b, c)
+# Consider a pythagorean triple (a, b, c)
 # We want c*c-2*a*b | c*c
 # But c*c = a*a+b*b = (a-b)**2+2*a*b
 # Therefore c*c-2*a*b = (b-a)**2
