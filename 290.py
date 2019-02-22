@@ -23,7 +23,6 @@ def isGood(state):
 
 def main(digits):
 	states = defaultdict(int)
-
 	states[0, 0] = 1
 	numGoodStates = 1
 
