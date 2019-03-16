@@ -9,7 +9,7 @@ def maxSubSum(a):
 def main():
   s=[0] * (2000**2+1)
   def get(row, col):
-    return s[2000 * row + col]
+    return s[2000 * row + col + 1]
   for k in range(1, 2000**2 + 1):
     s[k] = 100003-200003*k+300007*k*k*k if k<56 else s[k-24]+s[k-55]+1000000
     s[k] = s[k]%1000000-500000
